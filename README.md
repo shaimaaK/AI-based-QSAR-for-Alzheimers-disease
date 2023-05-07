@@ -11,7 +11,7 @@ hence an image of the dataset is saved for reference.
 ## Table of Content
 ### Libraries Used
 ### Preprocessing
-### Eploratory Data Analysis - EDA
+### Exploratory Data Analysis - EDA
 ### Machine Learning - Regression Problem
 #### Try Majority of Regression models using LazyRegressor
 #### Norrow down to 4 models
