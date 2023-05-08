@@ -11,7 +11,7 @@ predicted as pIC50 standard value.
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Machine Learning - Regression Problem](#machine-learning-regression-problem)
   * [Try Majority of Regression models using LazyRegressor](#try-majority-of-regression-models-using-lazyRegressor)
-  * [Evaluate four regression models amd optimized best model](#training-and-evaluation)
+  * [Evaluate four regression models and optimized best model](#evaluate-four-regression-models-and-optimized-best-model)
 
 ## Implementation Remarks
 This project is implmented on Google Colab, hence all additional packages to installed are documented and installed using shell commands in the [colab project](https://colab.research.google.com/drive/1UWrWKShhioxFjCvmLoFM8qMjxZ5lJMIO?usp=sharing). The dataset is fetched from [ChEMBL](https://www.ebi.ac.uk/chembl/) in 2021 using the `ChEMBL webresource client API` which is regularly updated
@@ -46,12 +46,15 @@ hence an image of the dataset is saved for reference.
 <br>**Step 9:** Dimension reduction using VarianceThreshold method
 <br>**Step 10:** split the data to training and testing with spliting ratio 67% and 33%
 
-### Exploratory Data Analysis - EDA
+### Exploratory Data Analysis
 ![Alt text](image link)
+
 ### Machine Learning - Regression Problem
 The problem at hand is a regression problem as the input to the regression model is the PaDEL descriptor that represents the footprint/descriptor of a molecule and try to predict the bio-activity value in pIC50 continuous-domain value hence the problem name Quantitative structure Activity relationship(QSAR). First the LazyRegressor library is used to norrow down the top four perfroming regression model then these models are compared to elect the best performing regression model which is further optimized by tuning the hyperparameter values.
+
 #### Try Majority of Regression models using LazyRegressor
 The LazyRegressor library runs 40 regression models including Support Vector Machine(SVM), Random Forest (RF), Adaboost regressor, decision tree regressor,and many more. The performance of the regressor models are evaluated according to the R-squared value , Root Mean Square Error (RMSE), and computation time.
+
 #### Evaluate four regression models amd optimized best model
 The following models are selected four models for regression
 1. Random Forest with 80 estimators
