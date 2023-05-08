@@ -3,12 +3,20 @@ AI-based Quantitative structure Activity relationship study for Alzheimer's dise
 The projects analysis the Quantitative structure Activity relationship of the Amyloid beta A4 protein and the Alzheimer's disease where the activity of the protein is
 predicted as pIC50 standard value.
 
+## Table of Content
+- [Implementation Remarks](#implementation-remarks)
+- [Table of Contents](#table-of-contents)
+- [Libraries Used](#libraries-used)
+- [Preprocessing Steps](#preprocessing-steps)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Machine Learning - Regression Problem](#machine-learning-regression-problem)
+  * [Try Majority of Regression models using LazyRegressor](#try-majority-of-regression-models-using-lazyRegressor)
+  * [Evaluate four regression models amd optimized best model](#training-and-evaluation)
+
 ## Implementation Remarks
 This project is implmented on Google Colab, hence all additional packages to installed are documented and installed using shell commands in the [colab project](https://colab.research.google.com/drive/1UWrWKShhioxFjCvmLoFM8qMjxZ5lJMIO?usp=sharing). The dataset is fetched from [ChEMBL](https://www.ebi.ac.uk/chembl/) in 2021 using the `ChEMBL webresource client API` which is regularly updated
 hence an image of the dataset is saved for reference.
 
-
-## Table of Content
 ### Libraries Used
 **Data Retrieval API** 
 * [ChEMBL webresource client](https://github.com/chembl/chembl_webresource_client) </ul>
