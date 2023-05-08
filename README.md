@@ -9,7 +9,7 @@ predicted as pIC50 standard value.
 - [Libraries Used](#libraries-used)
 - [Preprocessing Steps](#preprocessing-steps)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
-- [Machine Learning - Regression Problem](#machine-learning-regression-problem)
+- [Machine Learning Regression Problem](#machine-learning-regression-problem)
   * [Try Majority of Regression models using LazyRegressor](#try-majority-of-regression-models-using-lazyRegressor)
   * [Evaluate four regression models and optimized best model](#evaluate-four-regression-models-and-optimized-best-model)
 
@@ -49,13 +49,13 @@ hence an image of the dataset is saved for reference.
 ### Exploratory Data Analysis
 ![Alt text](image link)
 
-### Machine Learning - Regression Problem
+### Machine Learning Regression Problem
 The problem at hand is a regression problem as the input to the regression model is the PaDEL descriptor that represents the footprint/descriptor of a molecule and try to predict the bio-activity value in pIC50 continuous-domain value hence the problem name Quantitative structure Activity relationship(QSAR). First the LazyRegressor library is used to norrow down the top four perfroming regression model then these models are compared to elect the best performing regression model which is further optimized by tuning the hyperparameter values.
 
 #### Try Majority of Regression models using LazyRegressor
 The LazyRegressor library runs 40 regression models including Support Vector Machine(SVM), Random Forest (RF), Adaboost regressor, decision tree regressor,and many more. The performance of the regressor models are evaluated according to the R-squared value , Root Mean Square Error (RMSE), and computation time.
 
-#### Evaluate four regression models amd optimized best model
+#### Evaluate four regression models and optimized best model
 The following models are selected four models for regression
 1. Random Forest with 80 estimators
 2. Gradient Boost with 80 estimators
