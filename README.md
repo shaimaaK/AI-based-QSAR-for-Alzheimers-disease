@@ -52,7 +52,7 @@ The following models are selected four models for regression
 4. K Nearest Neighbor with k=10</ul>
 
 where the performance is evaluated according to:
-1. Root Mean Square Error(RMSE)
+1. Mean Absolute Error (MAE)
 2. R squared
 3. Computation time</ul>
 
