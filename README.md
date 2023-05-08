@@ -47,13 +47,22 @@ hence an image of the dataset is saved for reference.
 <br>**Step 10:** split the data to training and testing with spliting ratio 67% and 33%
 
 ### Exploratory Data Analysis
-![Alt text](image link)
+![class balance](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/Class%20Balance.png) 
+![class whatever](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-pIC50%20boxplot.png)
+![class whatever](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-MV%20boxplot.png)
+![](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-NumDonors%20boxplot.png)
+![](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-NumAcceptors%20boxplot.png)
+![](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-MV%20boxplot.png)
 
 ### Machine Learning Regression Problem
 The problem at hand is a regression problem as the input to the regression model is the PaDEL descriptor that represents the footprint/descriptor of a molecule and try to predict the bio-activity value in pIC50 continuous-domain value hence the problem name Quantitative structure Activity relationship(QSAR). First the LazyRegressor library is used to norrow down the top four perfroming regression model then these models are compared to elect the best performing regression model which is further optimized by tuning the hyperparameter values.
 
 #### Try Majority of Regression models using LazyRegressor
 The LazyRegressor library runs 40 regression models including Support Vector Machine(SVM), Random Forest (RF), Adaboost regressor, decision tree regressor,and many more. The performance of the regressor models are evaluated according to the R-squared value , Root Mean Square Error (RMSE), and computation time.
+
+![r squared](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/Results/LazyRegressor/R-squared.png)
+![RMSE](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/Results/LazyRegressor/RMSE.png)
+![time](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/Results/LazyRegressor/Computation-time.png)
 
 #### Evaluate four regression models and optimized best model
 The following models are selected four models for regression
@@ -71,8 +80,10 @@ According to table below the most promising regression is **random forest** thus
 - n_estimators = \[100, 300, 500, 800, 1200\]
 - max_depth = \[5, 8, 15, 25, 30\] </ul>
 
-In addition Cross Validation is used to accurately evaluate the model's performance with cv = 3
+According to grid search operation with cross validation (cv = 3 the best parameter values is `n_estimators = 800` and `max_depth = 8`
 <br>
+
+
 | **Model**                      	| **R2 Score**     	| **MAE**         	| **Execution Time** 	|
 |--------------------------------	|------------------	|-----------------	|--------------------	|
 | **Random Forest**              	|    <br>0.7045    	|    <br>0.549    	|    <br>0.0091      	|
@@ -80,3 +91,6 @@ In addition Cross Validation is used to accurately evaluate the model's performa
 | **K Nearest Neighbor**         	|    <br>0.68      	|    <br>0.61     	|    <br>0.0016      	|
 | **Support Vector Machine**     	|    <br>0.708     	|    <br>0.61     	|    <br>0.0018      	|
 | **Optimized Random Forest**    	|    <br>0.928     	|    <br>0.29     	|    <br>0.0702      	|
+<br>
+
+![s](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/Results/BestPerformance/optimized-random-forest-results.png)
