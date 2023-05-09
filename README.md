@@ -1,7 +1,6 @@
 # AI-based-QSAR-for-Alzheimers-disease
 AI-based Quantitative structure Activity relationship study for Alzheimer's disease project is implemented as part of the Data Mining Course in my Masters degree in AI.
-The projects analysis the Quantitative structure Activity relationship of the Amyloid beta A4 protein and the Alzheimer's disease where the activity of the protein is
-predicted as pIC50 standard value.
+The project analyzes the Quantitative structure Activity relationship of the Amyloid beta A4 protein and the Alzheimer's disease where the activity of the protein is predicted as pIC50 standard value from the molecular structure.
 
 ## Table of Content
 - [Implementation Remarks](#implementation-remarks)
@@ -14,8 +13,8 @@ predicted as pIC50 standard value.
   * [Evaluate four regression models and optimized best model](#evaluate-four-regression-models-and-optimized-best-model)
 
 ## Implementation Remarks
-This project is implmented on Google Colab, hence all additional packages to installed are documented and installed using shell commands in the [colab project](https://colab.research.google.com/drive/1UWrWKShhioxFjCvmLoFM8qMjxZ5lJMIO?usp=sharing). The dataset is fetched from [ChEMBL](https://www.ebi.ac.uk/chembl/) in 2021 using the `ChEMBL webresource client API` which is regularly updated
-hence an image of the dataset is saved for reference.
+This project is implmented on Google Colab, hence all additional packages to be installed are documented and installed using shell commands in the [colab project](https://colab.research.google.com/drive/1UWrWKShhioxFjCvmLoFM8qMjxZ5lJMIO?usp=sharing). The dataset is fetched from [ChEMBL](https://www.ebi.ac.uk/chembl/) in 2021 using the `ChEMBL webresource client API` which is regularly updated
+hence an image of the dataset is saved for a reference.
 
 ### Libraries Used
 **Data Retrieval API** 
@@ -37,7 +36,7 @@ hence an image of the dataset is saved for reference.
 ### Preprocessing Steps
 **Step 1:** Access the ChEMBL database and filter data, to exctract the data for Alzheimers disease where protein studies is Amyloid beta A4 protein.
 <br>**Step 2:** Handling missing , duplicated, and null data
-<br>**Step 3:** simply the  simplified molecular input line-entry system (SMILE) notation e.g. disconnections in SMILEs notation
+<br>**Step 3:** simply the  simplified molecular input line-entry system (SMILE) notation e.g. handle disconnections in SMILEs notation
 <br>**Step 4:** Transforming attribute types according to the attribute nature
 <br>**Step 5:** Discretization of bio-activity to 3 levels: active, intermediate, inactive according to the standard value then eliminate intermediate level rows to focus on active/inactive instances
 <br>**Step 6:** Normalize IC50 value by computing pIC50 (negative logarithmic of IC50)
@@ -55,7 +54,7 @@ hence an image of the dataset is saved for reference.
 ![](https://github.com/shaimaaK/AI-based-QSAR-for-Alzheimers-disease/blob/main/Images/EDA/class-MV%20boxplot.png)
 
 ### Machine Learning Regression Problem
-The problem at hand is a regression problem as the input to the regression model is the PaDEL descriptor that represents the footprint/descriptor of a molecule and try to predict the bio-activity value in pIC50 continuous-domain value hence the problem name Quantitative structure Activity relationship(QSAR). First the LazyRegressor library is used to norrow down the top four perfroming regression model then these models are compared to elect the best performing regression model which is further optimized by tuning the hyperparameter values.
+The problem at hand is a regression problem as the input to the regression model is the PaDEL descriptor that represents the footprint/descriptor of a molecule and try to predict the bio-activity value in pIC50 continuous-domain value hence the problem name Quantitative structure Activity relationship(QSAR). First the LazyRegressor library is used to norrow down to four good perfroming regression model then these models are compared to elect the best performing regression model which is further optimized by tuning its hyperparameter values.
 
 #### Try Majority of Regression models using LazyRegressor
 The LazyRegressor library runs 40 regression models including Support Vector Machine(SVM), Random Forest (RF), Adaboost regressor, decision tree regressor,and many more. The performance of the regressor models are evaluated according to the R-squared value , Root Mean Square Error (RMSE), and computation time.
@@ -76,7 +75,7 @@ where the performance is evaluated according to:
 2. R squared
 3. Computation time</ul>
 
-According to table below the most promising regression is **random forest** thus the followig parameters are optimized in oder to optimize the performance of the model:
+According to table below the most promising regression is **random forest** thus the followig parameters are optimized using search grid method in order to optimize the performance of the random forest model:
 - n_estimators = \[100, 300, 500, 800, 1200\]
 - max_depth = \[5, 8, 15, 25, 30\] </ul>
 
